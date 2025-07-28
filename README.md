@@ -15,6 +15,8 @@ This project is a full-stack application that connects to a user's Gmail account
 - 🎨 Simple, modern Angular frontend interface
 - 🌐 Python backend serving email and calendar endpoints
 
+![Classifier interface](images/Screenshot2.png)
+
 ## 🛠 Technologies Used
 
 ### Frontend
@@ -27,6 +29,8 @@ This project is a full-stack application that connects to a user's Gmail account
 - Google APIs (Gmail, Calendar)
 - Gemini AI model for classification
 - OAuth2 authentication
+
+![Classifier interface](images/Screenshot3.png)
 
 ## 🚀 Setup Instructions
 
