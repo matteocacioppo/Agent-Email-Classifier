@@ -1,6 +1,6 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
+import { GmailComponent } from './gmail/gmail';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {

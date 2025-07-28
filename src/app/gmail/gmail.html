@@ -1,0 +1,39 @@
+<div class="email-box" *ngIf="gmailConnected">
+  <div class="email-content">
+    <div [innerHTML]="emailBody"></div>
+  </div>
+
+  <div class="category-label" *ngIf="emails.length > 0">
+    <span><strong>Subject:</strong> {{ emailSubject }}</span><br>
+    <span><strong>Category:</strong> {{ emailCategory }}</span><br>
+    <span><strong>Sender:</strong> {{ emailSender }}</span>
+  </div>
+
+  <div *ngIf="calendarMessage" 
+       [ngClass]="{
+         'success-message': calendarMessage.type === 'success', 
+         'error-message': calendarMessage.type === 'error'
+       }"
+       class="calendar-alert">
+    {{ calendarMessage.text }}
+  </div>
+</div>
+
+<div *ngIf="gmailConnected && emails.length > 0" class="nav-section">
+  <div class="nav-buttons">
+    <button (click)="prevEmail()" [disabled]="currentIndex === 0">
+      &larr; Previous
+    </button>
+
+    <button *ngIf="emailCategory === 'appointment'" 
+            (click)="aggiungiACalendar()" 
+            class="calendar-button center-btn">
+      📅 Add to Calendar
+    </button>
+
+    <button (click)="nextEmail()" [disabled]="currentIndex === emails.length - 1">
+      Next &rarr;
+    </button>
+  </div>
+</div>
+
