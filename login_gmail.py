@@ -10,11 +10,9 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
 def main():
     creds = None
 
-    # Se token.json esiste, lo usa per autenticarsi
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
 
-    # Se non è valido o mancante, richiede login
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
@@ -23,11 +21,9 @@ def main():
                 'C:/Users/matte/OneDrive/Desktop/Gmail_API/credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
 
-        # Salva le credenziali per il futuro
         with open('token.json', 'w') as token:
             token.write(creds.to_json())
 
-    # Test: stampa l’oggetto Gmail API
     service = build('gmail', 'v1', credentials=creds)
     profile = service.users().getProfile(userId='me').execute()
     print(f"✅ Accesso Gmail riuscito! Email: {profile['emailAddress']}")
