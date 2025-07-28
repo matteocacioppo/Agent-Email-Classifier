@@ -2,7 +2,7 @@
 
 This project is a full-stack application that connects to a user's Gmail account, automatically classifies incoming emails using Google Gemini AI, and displays them in a clean, interactive Angular interface. Users can browse, filter emails by category, and—when the email is an appointment—add it directly to their Google Calendar with a single click.
 
-![Classifier interface](images/images/Screenshot 2025-07-27 210158.png)
+![Classifier interface](images/Screenshot1.png)
 
 ## 🧠 Features
 
